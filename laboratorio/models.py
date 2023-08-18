@@ -10,9 +10,15 @@ def validate_min_date(value):
 class Laboratorio(models.Model):
     nombre = models.CharField(max_length=128, blank=False)
 
+    def __str__(self):
+        return self.nombre
+
 class DirectorGeneral(models.Model):
     nombre = models.CharField(max_length=128, blank=False)
     laboratorio = models.OneToOneField(Laboratorio, on_delete = models.PROTECT)
+
+    def __str__(self):
+        return self.nombre
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=200, blank=False)
@@ -21,4 +27,6 @@ class Producto(models.Model):
     p_costo = models.DecimalField(max_digits=12, decimal_places=2)
     p_venta = models.DecimalField(max_digits=12, decimal_places=2)
 
+    def __str__(self):
+        return self.nombre
 
