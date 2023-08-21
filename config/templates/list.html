@@ -1,5 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Listar Laboratorio</h2>
-
+<div class="container justify-content-center p-5">
+    <h1 class="text-center display-5">Información de Laboratorios</h1>
+</div>
+<div class="container">
+<form method="GET">
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>País</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lab in laboratorios %}
+            <tr>
+                <td>{{ lab.nombre }}</td>
+                <td>{{ lab.ciudad }}</td>
+                <td>{{ lab.pais }}</td>
+                <td><a href="/update/{{ lab.id }}">Actualizar</a></td>
+                <td><a href="/delete/{{ lab.id }}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</div>
 {% endblock %}

@@ -3,10 +3,10 @@ from .models import Laboratorio, DirectorGeneral, Producto
 
 # Register your models here.
 class LaboratorioAdmin(admin.ModelAdmin):
-    list_display = ("id", "nombre")
+    list_display = ("id", "nombre", "ciudad", "pais")
 
 class DirectorGeneralAdmin(admin.ModelAdmin):
-    list_display = ("id", "nombre", "laboratorio")
+    list_display = ("id", "nombre", "especialidad","laboratorio")
 
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ("id", "nombre", "laboratorio", "get_fabricacion_year","p_costo", "p_venta")

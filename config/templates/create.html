@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Crear Laboratorio</h2>
+<div class="container justify-content-center p-5">
+    <h1 class="text-center display-6">Ingresar los Datos del Laboratorio</h1>
+    <div class="container justify-content-center p-5">
+        <form>
+        {{ formulario.as_p}}
+        
+        <button type="submit" class="btn btn-secondary">Enviar</button>
 
+        </form>
+    </div>
+</div>
 {% endblock %}
