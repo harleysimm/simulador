@@ -26,7 +26,7 @@ def v_create(request):
         formcrear = LaboratorioForm(datos)
         if formcrear.is_valid():
             formcrear.save()
-        return HttpResponseRedirect("/")
+            return HttpResponseRedirect('/')
     context = {
         'formulario': LaboratorioForm()
     }

@@ -15,9 +15,10 @@
 <br>
 <footer>
     <div class="container">
-    <p>¿Información de los laboratorios?</p>
-    <a href="/">Ir a la página de Inicio</a> | <a href="/create">Crear Laboratorio</a>
-        <p>Usted ha visitado esta página {{ numveces }} veces</p>
+        <p>¿Información de los laboratorios?</p>
+        <a href="/">Ir a la página de Inicio</a> | <a href="/create">Crear Laboratorio</a>
+        {% block num_veces %}
+        {% endblock %}
     </div>
 </footer>
 </html>
