@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Laboratorio
 from .forms import LaboratorioForm
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+import sweetify
 
 # Create your views here.
 def v_list(request):
@@ -26,6 +28,7 @@ def v_create(request):
         formcrear = LaboratorioForm(datos)
         if formcrear.is_valid():
             formcrear.save()
+            sweetify.toast(request, 'El laboratorio ha sido creado exitosamente')
             return HttpResponseRedirect('/')
     context = {
         'formulario': LaboratorioForm()
@@ -40,6 +43,7 @@ def v_update(request, laboratorio_id):
         formeditar = LaboratorioForm(datos, instance = lab)
         if formeditar.is_valid():
             formeditar.save()
+            sweetify.success(request, 'El laboratorio ha sido actualizado exitosamente')
         return HttpResponseRedirect('/')
     else:
         context = {
@@ -54,6 +58,7 @@ def v_delete(request, laboratorio_id):
         DirectorGeneral.objects.filter(laboratorio = laboratorio_id).delete()
 
         Laboratorio.objects.get(id = laboratorio_id).delete()
+        sweetify.warning(request, 'El laboratorio ha sido eliminado')
         return HttpResponseRedirect("/")
 
     context = {
