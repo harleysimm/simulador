@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os,getenv("DB_NAME"), 
-        'USER': os,getenv("DB_USER"),
-        'PASSWORD': os,getenv("DB_PASSWORD"),
-        'HOST': os,getenv("DB_HOST"),
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
     }
 }
 import sys
@@ -135,3 +135,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles", "static")
