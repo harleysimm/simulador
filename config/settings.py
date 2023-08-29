@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os,getenv("DB_NAME"), #'harleysim_db_final_orm',
-        'USER': os,getenv("DB_USER"),#'harleysim_userdjango',
-        'PASSWORD': os,getenv("DB_PASSWORD"),#'userdjango',
-        'HOST': os,getenv("DB_HOST"),#'postgresql-harleysim.alwaysdata.net',
+        'NAME': os,getenv("DB_NAME"), 
+        'USER': os,getenv("DB_USER"),
+        'PASSWORD': os,getenv("DB_PASSWORD"),
+        'HOST': os,getenv("DB_HOST"),
     }
 }
 import sys
